@@ -211,3 +211,4 @@ print(f"\nGanho sobre perda: {ganho_sobre_perda:.2f}")
 print(f"Taxa de acerto: {acertou_lado:.2%}")
 print(f"Expectativa matemática de lucro: {exp_mat_lucro:.4f}")
 
+#comentario soh para testar o pull request
