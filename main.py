@@ -1,6 +1,5 @@
 from src.data.downloader import BancoDadosDownloader
 
-
 def main():
     instituicoes = [
         "ABC BRASIL", "ALFA HOLDING", "ALFA INVEST", "AMAZONIA", "BANCO BMG", "BANCO PAN", "BANESE",
@@ -9,9 +8,11 @@ def main():
         "NORD BRASIL", "NU-NUBANK", "PINE", "SANTANDER BR", "BCO SOFISA S.A.", "BRB BCO DE BRASILIA S.A."
     ]
 
-    downloader = BancoDadosDownloader(ano=2022, instituicoes=instituicoes, arquivo_saida="valores_bancos_2022.csv")
-    downloader.baixar_e_processar()
+    pasta_saida = "db/raw"  # Pasta para salvar os arquivos
+
+    for ano in range(2020, 2026):
+        downloader = BancoDadosDownloader(ano=ano, instituicoes=instituicoes, pasta_saida=pasta_saida)
+        downloader.baixar_e_processar()
 
 if __name__ == "__main__":
     main()
-#teste tambem
