@@ -1,17 +1,24 @@
-from src.data.downloader import BancoDadosDownloader
-
+from src.core.ativo import Ativo
+import config
 
 def main():
-    instituicoes = [
-        "ABC BRASIL", "ALFA HOLDING", "ALFA INVEST", "AMAZONIA", "BANCO BMG", "BANCO PAN", "BANESE",
-        "BANESTES", "BANPARA", "BANRISUL", "BR PARTNERS", "BRADESCO", "BRASIL", "BRB BANCO",
-        "BTGP BANCO", "INTER CO", "ITAUSA", "ITAUUNIBANCO", "MERC BRASIL", "MERC INVEST", "MODALMAIS",
-        "NORD BRASIL", "NU-NUBANK", "PINE", "SANTANDER BR", "BCO SOFISA S.A.", "BRB BCO DE BRASILIA S.A."
-    ]
+    acao = Ativo(
+        ticker=config.TICKER,
+        data_inicio=config.DATA_INICIO,
+        data_fim=config.DATA_FIM,
+        janela=config.JANELA,
+        batch_size=config.BATCH_SIZE,
+        epochs=config.EPOCHS
+    )
 
-    downloader = BancoDadosDownloader(ano=2022, instituicoes=instituicoes, arquivo_saida="valores_bancos_2022.csv")
-    downloader.baixar_e_processar()
+    acao.carregar_dados()
+    acao.preparar_dados()
+    acao.treinar()
+    acao.prever()
+    acao.avaliar()
+    acao.plotar()
+    acao.estatisticas()
+
 
 if __name__ == "__main__":
     main()
-#teste tambem
