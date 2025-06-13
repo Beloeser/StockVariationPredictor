@@ -1,4 +1,3 @@
-# src/model/treinamento.py
 from keras.models import Sequential
 from keras.layers import LSTM, Dense, Input
 

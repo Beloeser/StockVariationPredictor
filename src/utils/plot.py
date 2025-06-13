@@ -1,4 +1,3 @@
-# src/utils/plot.py
 import matplotlib.pyplot as plt
 
 def plotar_resultados(dados_completos, df_teste):

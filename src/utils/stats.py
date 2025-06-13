@@ -1,17 +1,13 @@
-# src/utils/stats.py
-
-def imprimir_estatisticas(df):
-    dias = int(input("Digite o número de dias para calcular a precisão: "))
-
+def imprimir_estatisticas(df, dias):
     col_real = f'variacao_{dias}d_acao'
     col_pred = f'variacao_{dias}d_modelo'
     col_resultado = f'acertou_tendencia_{dias}d'
 
     df[col_real] = df['Close'].pct_change(periods=dias)
     df[col_pred] = df['predicoes'].pct_change(periods=dias)
-    df = df.dropna(subset=[col_real, col_pred])
-    df[col_resultado] = (df[col_real] > 0) == (df[col_pred] > 0)
-    df[f'{col_real}_abs'] = df[col_real].abs()
+    df = df.dropna(subset=[col_real, col_pred]).copy()  
+    df.loc[:, col_resultado] = (df[col_real] > 0) == (df[col_pred] > 0)
+    df.loc[:, f'{col_real}_abs'] = df[col_real].abs()
 
     taxa_acerto = df[col_resultado].mean()
     taxa_erro = 1 - taxa_acerto
@@ -27,3 +23,4 @@ def imprimir_estatisticas(df):
     print(f"Ganho sobre perda: {ganho_sobre_perda:.2f}")
     print(f"Taxa de acerto ({dias}d): {taxa_acerto:.2%}")
     print(f"Expectativa matemática de lucro ({dias}d): {exp_mat_lucro:.4f}")
+    print()
