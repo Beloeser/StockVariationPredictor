@@ -1,6 +1,8 @@
-from src.core.ativo import Ativo
+# from src.core.ativo import Ativo
+from app import App
 import config
 
+'''
 def main():
     acao = Ativo(
         ticker=config.TICKER,
@@ -18,7 +20,9 @@ def main():
     acao.avaliar()
     acao.plotar()
     acao.estatisticas()
-
-
+'''
 if __name__ == "__main__":
-    main()
+    app = App()
+    app.mainloop()
+    # main()  # ate ser adicionado a funcionalidade 
+
