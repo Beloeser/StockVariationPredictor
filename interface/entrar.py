@@ -25,7 +25,7 @@ class TelaEntrar(ctk.CTkFrame):
             text="Não tem uma conta? Cadastre-se",
             fg_color="transparent",
             hover_color="#555",
-            command=lambda: self.controller.mostrar_frame("AddUser")
+            command=lambda: self.controller.mostrar_frame("Cadastro")
         )
         self.go_to_register_button.pack(pady=(20, 10))
 
@@ -37,5 +37,6 @@ class TelaEntrar(ctk.CTkFrame):
 
         if autenticacao:
             self.status_label.configure(text="Login bem sucedido!", text_color="green")
+            self.controller.mostrar_frame("Home")
         else:
             self.status_label.configure(text="Nome de usuario ou senha incorretos.", text_color="red")

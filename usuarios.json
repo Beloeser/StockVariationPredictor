@@ -3,6 +3,10 @@
     {
       "nome": "lucas",
       "senha": "$2b$12$j62iPzzCC/sv.8jUJMFwOuQBBhdSsro.a40z/wwyGEJVOTYQYreyK"
+    },
+    {
+      "nome": "bernardo",
+      "senha": "$2b$12$HTWsgap5cD5ua/TmbS6LYO0Q3EudVhlFvd6b188fIfzwxdh7qGpkW"
     }
   ]
 }
