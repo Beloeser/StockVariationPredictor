@@ -3,8 +3,8 @@ import pandas as pd
 
 def avaliar_previsoes(df_teste):
     df = df_teste.copy()
-    df['variacao_percentual_acao'] = df['Close'].pct_change()
-    df['variacao_percentual_modelo'] = df['predicoes'].pct_change()
+    df['variacao_percentual_acao'] = df['Close'].pct_change(fill_method=None)
+    df['variacao_percentual_modelo'] = df['predicoes'].pct_change(fill_method=None)
     df = df.dropna()
 
     df['var_acao_maior_que_zero'] = df['variacao_percentual_acao'] > 0
