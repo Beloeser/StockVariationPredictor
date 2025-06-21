@@ -1,28 +1,18 @@
-# from src.core.ativo import Ativo
-from app import App
-import config
+from src.core.ativo import Ativo
+from src.models.Treinadores.treinador_prophet import TreinadorProphet
+from src.models.Treinadores.treinadorML import TreinadorML
 
-'''
 def main():
-    acao = Ativo(
-        ticker=config.TICKER,
-        data_inicio=config.DATA_INICIO,
-        data_fim=config.DATA_FIM,
-        janela=config.JANELA,
-        batch_size=config.BATCH_SIZE,
-        epochs=config.EPOCHS
-    )
+    
+    ativo = Ativo(treinador_cls=TreinadorML)
 
-    acao.carregar_dados()
-    acao.preparar_dados()
-    acao.treinar()
-    acao.prever()
-    acao.avaliar()
-    acao.plotar()
-    acao.estatisticas()
-'''
+    ativo.carregar_dados(usar_cache=True)  
+    ativo.preparar_dados()
+    ativo.treinar()
+    ativo.prever()
+    ativo.avaliar()
+    ativo.plotar()
+    ativo.estatisticas()
+
 if __name__ == "__main__":
-    app = App()
-    app.mainloop()
-    # main()  # ate ser adicionado a funcionalidade 
-
+    main()

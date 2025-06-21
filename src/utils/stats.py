@@ -1,11 +1,14 @@
 def imprimir_estatisticas(df, dias):
+    # Filtra só linhas com Close real
+    df = df[df['Close'].notna()].copy()
+
     col_real = f'variacao_{dias}d_acao'
     col_pred = f'variacao_{dias}d_modelo'
     col_resultado = f'acertou_tendencia_{dias}d'
 
     df[col_real] = df['Close'].pct_change(periods=dias)
     df[col_pred] = df['predicoes'].pct_change(periods=dias)
-    df = df.dropna(subset=[col_real, col_pred]).copy()  
+    df = df.dropna(subset=[col_real, col_pred])
     df.loc[:, col_resultado] = (df[col_real] > 0) == (df[col_pred] > 0)
     df.loc[:, f'{col_real}_abs'] = df[col_real].abs()
 
