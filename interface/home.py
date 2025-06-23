@@ -11,9 +11,9 @@ class TelaInicial(ctk.CTkFrame):
         self.header_frame = ctk.CTkFrame(self, fg_color="transparent")
         self.header_frame.grid(row=0, column=0, padx=20, pady=(20, 10), sticky="ew")
 
-        self.header_frame.grid_columnconfigure(3, weight=1) # Coluna vazia para empurrar a imagem para a direita
+        self.header_frame.grid_columnconfigure(3, weight=1)
 
-        self.comparar_button = ctk.CTkButton(self.header_frame, text="Comparar", width=120)
+        self.comparar_button = ctk.CTkButton(self.header_frame, text="Comparar", width=120, command=lambda: self.controller.mostrar_frame("Comparar"))
         self.comparar_button.grid(row=0, column=0, padx=(0, 10))
 
         self.salvos_button = ctk.CTkButton(self.header_frame, text="Salvos", width=120)

@@ -1,5 +1,5 @@
 import customtkinter as ctk
-
+from interface.comparar import TelaComparar
 from src.core.gerencia_usuarios import GerenciaUsuarios
 from interface.entrar import TelaEntrar
 from interface.cadastrar import TelaCadastro
@@ -9,6 +9,7 @@ class App(ctk.CTk):
     def __init__(self):
         super().__init__()
         self.title("Stock Variation Predictor")
+        self.iconbitmap("interface\imagens\logo.ico")
         self.geometry("700x400")
 
         self.gerencia_usuario = GerenciaUsuarios()
@@ -22,7 +23,7 @@ class App(ctk.CTk):
         container.grid_columnconfigure(0, weight=1)
 
         self.frames = {}
-        for F, name in [(TelaEntrar, "Login"), (TelaCadastro, "Cadastro"), (TelaInicial, "Home")]:
+        for F, name in [(TelaEntrar, "Login"), (TelaCadastro, "Cadastro"), (TelaInicial, "Home"), (TelaComparar, "Comparar")]:
             frame = F(container, self) 
             self.frames[name] = frame
             frame.grid(row=0, column=0, sticky="nsew")

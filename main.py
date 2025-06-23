@@ -1,3 +1,4 @@
+from app import App
 from src.core.ativo import Ativo
 from src.models.Treinadores.treinador_prophet import TreinadorProphet
 from src.models.Treinadores.treinadorML import TreinadorML
@@ -15,4 +16,5 @@ def main():
     ativo.estatisticas()
 
 if __name__ == "__main__":
-    main()
+    app = App()
+    app.mainloop()
