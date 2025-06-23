@@ -6,10 +6,10 @@ from ..utils.stats import calcular_estatisticas
 
 class Ativo:
     TICKERS_VALIDOS = [
-        "MODL11.SA", "LPSB3.SA", "BBDC3.SA", "BRIV4.SA",
+        "LPSB3.SA", "BBDC3.SA", "BRIV4.SA",
         "BPAC3.SA", "BEES3.SA", "VIVT3.SA", "ITUB4.SA",
         "ABCB4.SA", "BRIV3.SA", "MODL3.SA", "BMGB4.SA",
-        "SANB11.SA", "NUBR33.SA", "BSLI3.SA", "BRSR5.SA",
+        "NUBR33.SA", "BSLI3.SA", "BRSR5.SA",
         "AGRO3.SA", "BBAS3.SA", "ITSA3.SA", "WEGE3.SA"
     ]
 

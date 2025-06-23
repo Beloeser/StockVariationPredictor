@@ -66,7 +66,7 @@ class TelaComparar(ctk.CTkFrame):
         seletor_modelo = ctk.CTkOptionMenu(self.frame_scroll, values=["LSTM", "Prophet"])
         seletor_modelo.grid(row=row, column=1, padx=10, pady=5, sticky="ew")
 
-        botao_remover = ctk.CTkButton(self.frame_scroll, text="–", width=40, command=lambda: self.remover_ativo(row))
+        botao_remover = ctk.CTkButton(self.frame_scroll, text="🗑️", width=40, command=lambda: self.remover_ativo(row))
         botao_remover.grid(row=row, column=2, padx=5)
 
         self.linhas_widgets.append((seletor_ticker, seletor_modelo, botao_remover))
