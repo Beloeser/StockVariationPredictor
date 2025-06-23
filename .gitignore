@@ -20,6 +20,8 @@ ENV/
 *.csv
 *.db
 db/
+db/processed/*.csv
+db/raw/*.csv
 
 # Sistema operacional
 .DS_Store
