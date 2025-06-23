@@ -1,4 +1,4 @@
-def imprimir_estatisticas(df, dias):
+def calcular_estatisticas(df, dias):
     # Filtra só linhas com Close real
     df = df[df['Close'].notna()].copy()
 
@@ -20,6 +20,7 @@ def imprimir_estatisticas(df, dias):
     exp_mat_lucro = taxa_acerto * lucro_acerto - taxa_erro * lucro_erro
     ganho_sobre_perda = lucro_acerto / lucro_erro if lucro_erro != 0 else float('inf')
 
+    #Remover isso antes do final, já que é só para teste/debug
     print(f"------ Precisão de {dias} DIAS ------")
     print(f"Média de lucro (acertou=False, acertou=True):")
     print(media_lucro)
@@ -27,3 +28,12 @@ def imprimir_estatisticas(df, dias):
     print(f"Taxa de acerto ({dias}d): {taxa_acerto:.2%}")
     print(f"Expectativa matemática de lucro ({dias}d): {exp_mat_lucro:.4f}")
     print()
+
+    return {
+        "dias": dias,
+        "taxa_acerto": taxa_acerto,
+        "lucro_acerto": lucro_acerto,
+        "lucro_erro": lucro_erro,
+        "exp_mat_lucro": exp_mat_lucro,
+        "ganho_sobre_perda": ganho_sobre_perda
+    }

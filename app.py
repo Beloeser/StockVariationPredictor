@@ -1,9 +1,6 @@
 import customtkinter as ctk
-from interface.comparar import TelaComparar
+from interface import *
 from src.core.gerencia_usuarios import GerenciaUsuarios
-from interface.entrar import TelaEntrar
-from interface.cadastrar import TelaCadastro
-from interface.home import TelaInicial
 
 class App(ctk.CTk):
     def __init__(self):
@@ -23,7 +20,7 @@ class App(ctk.CTk):
         container.grid_columnconfigure(0, weight=1)
 
         self.frames = {}
-        for F, name in [(TelaEntrar, "Login"), (TelaCadastro, "Cadastro"), (TelaInicial, "Home"), (TelaComparar, "Comparar")]:
+        for F, name in [(TelaEntrar, "Login"), (TelaCadastro, "Cadastro"), (TelaInicial, "Home"), (TelaComparar, "Comparar"), (TelaSimular, "Simular")]:
             frame = F(container, self) 
             self.frames[name] = frame
             frame.grid(row=0, column=0, sticky="nsew")

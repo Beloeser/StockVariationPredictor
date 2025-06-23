@@ -2,7 +2,7 @@ import os
 from sklearn.preprocessing import MinMaxScaler
 from ..models.avaliacao import avaliar_previsoes
 from ..utils.plot import plotar_resultados
-from ..utils.stats import imprimir_estatisticas
+from ..utils.stats import calcular_estatisticas
 
 class Ativo:
     TICKERS_VALIDOS = [
@@ -138,4 +138,4 @@ class Ativo:
 
     def estatisticas(self):
         for dias in [1, 7, 30, 60]:
-            imprimir_estatisticas(self.predicoes_df, dias)
+            calcular_estatisticas(self.predicoes_df, dias)

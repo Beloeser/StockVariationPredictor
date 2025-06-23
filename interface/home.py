@@ -19,7 +19,7 @@ class TelaInicial(ctk.CTkFrame):
         self.salvos_button = ctk.CTkButton(self.header_frame, text="Salvos", width=120)
         self.salvos_button.grid(row=0, column=1, padx=0)
 
-        self.simular_button = ctk.CTkButton(self.header_frame, text="Simular", width=120)
+        self.simular_button = ctk.CTkButton(self.header_frame, text="Simular", width=120, command=lambda: self.controller.mostrar_frame("Simular"))
         self.simular_button.grid(row=0, column=2, padx=10)
         
         self.image_placeholder = ctk.CTkFrame(self.header_frame, fg_color="#555555", width=100, height=28)
