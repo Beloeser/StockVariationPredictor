@@ -68,7 +68,7 @@ class Ativo:
             except Exception as e:
                 print(f"❌ Arquivo de cache corrompido ou em formato incorreto ({e}). Excluindo e baixando novamente...")
                 os.remove(caminho_raw)
-                return self.carregar_dados(usar_cache=False) #chatgpt
+                return self.carregar_dados(usar_cache=False) 
 
         else:
             import yfinance as yf
