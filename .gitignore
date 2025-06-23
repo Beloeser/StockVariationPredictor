@@ -1,15 +1,26 @@
+# Bytecode
 __pycache__/
 *.py[cod]
-*.py.class
 *.pyc
+*.pyo
 
+# Env files
 .env
-.venv
+.venv/
 venv/
-
-=======
 env/
 ENV/
 
+# IDEs e configs
+.vscode/
+.idea/
+
+# Dados e cache
 *.json
 *.csv
+*.db
+db/
+
+# Sistema operacional
+.DS_Store
+Thumbs.db
