@@ -26,10 +26,15 @@ class TelaSimular(ctk.CTkFrame):
         self.modelo_box.grid(row=2, column=0, padx=80, pady=5, sticky="ew")
 
         # Datas
-        self.data_entrada = ctk.CTkEntry(self, placeholder_text="Data de Compra (YYYY-MM-DD)")
+        data_compra_padrao = "2015-06-17"
+        data_venda_padrao = "2025-06-17"
+
+        self.data_entrada = ctk.CTkEntry(self, placeholder_text="Data de Compra (YYYY-MM-DD)", state="readonly")
+        self.data_entrada.insert(0, data_compra_padrao)
         self.data_entrada.grid(row=3, column=0, padx=80, pady=5, sticky="ew")
 
-        self.data_saida = ctk.CTkEntry(self, placeholder_text="Data de Venda (YYYY-MM-DD)")
+        self.data_saida = ctk.CTkEntry(self, placeholder_text="Data de Venda (YYYY-MM-DD)", state="readonly")
+        self.data_saida.insert(0, data_venda_padrao)
         self.data_saida.grid(row=4, column=0, padx=80, pady=5, sticky="ew")
 
         # Valor investido

@@ -16,9 +16,6 @@ class TelaInicial(ctk.CTkFrame):
         self.comparar_button = ctk.CTkButton(self.header_frame, text="Comparar", width=120, command=lambda: self.controller.mostrar_frame("Comparar"))
         self.comparar_button.grid(row=0, column=0, padx=(0, 10))
 
-        self.salvos_button = ctk.CTkButton(self.header_frame, text="Salvos", width=120)
-        self.salvos_button.grid(row=0, column=1, padx=0)
-
         self.simular_button = ctk.CTkButton(self.header_frame, text="Simular", width=120, command=lambda: self.controller.mostrar_frame("Simular"))
         self.simular_button.grid(row=0, column=2, padx=10)
         

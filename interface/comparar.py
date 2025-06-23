@@ -53,7 +53,7 @@ class TelaComparar(ctk.CTkFrame):
         self.frame_tabela = ctk.CTkScrollableFrame(self, height=250)
         self.frame_tabela.grid(row=4, column=0, padx=20, pady=(0, 20), sticky="nsew")
         self.frame_tabela.grid_columnconfigure((0, 1, 2, 3, 4, 5), weight=1)
-        self.linhas_tabela = []  # Guarda widgets para destruir depois
+        self.linhas_tabela = []
 
 
 
