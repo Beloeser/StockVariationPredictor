@@ -20,8 +20,7 @@ class TelaCadastro(ctk.CTkFrame):
         self.status_label = ctk.CTkLabel(self, text="", text_color="gray")
         self.status_label.pack(pady=10)
         
-        # --- NOVO BOTÃO DE NAVEGAÇÃO ---
-        # Este botão levará de volta para a tela de login.
+     
         self.go_to_login_button = ctk.CTkButton(
             self,
             text="Já tem uma conta? Faça o login",
